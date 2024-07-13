@@ -1,0 +1,44 @@
+env:
+  contexts:
+    - name: test-context
+      urls:
+        - "http://host.docker.internal:3000/"
+      includePaths:
+        - "http://host.docker.internal:3000/.*"
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: true
+
+jobs:
+  - type: alertFilter
+    alertFilters:
+      - ruleId: 10020
+        newRisk: "Info"
+
+  - type: passiveScan-config
+    parameters:
+      maxAlertsPerRule: 10
+      scanOnlyInScope: true
+
+  - type: spider
+
+  - type: spiderAjax
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 5
+      
+  - type: report
+    parameters:
+      template: traditional-html
+      reportDir: /zap/wrk/reports
+      reportFile: zap_html_report
+      reportTitle: "ZAP Passive Scan Report"
+
+  - type: report
+    parameters:
+      template: traditional-xml
+      reportDir: /zap/wrk/reports
+      reportFile: zap_xml_report
+      reportTitle: "ZAP Passive Scan Report"

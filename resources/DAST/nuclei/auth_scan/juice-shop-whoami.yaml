@@ -1,0 +1,33 @@
+id: juice-shop-whoami
+
+info:
+  name: Juice Shop whoami
+  author: ABCD
+  severity: info
+  description: |
+    Juice Shop template to check if auth works correctly
+
+http:
+  - raw:
+    - |
+        GET /rest/user/whoami HTTP/1.1
+        Content-Type: application/json
+        Host: {{Hostname}}
+    
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - joe@example.com 
+
+    extractors:
+      - type: json
+        part: body
+        name: auth_token
+        json:
+          - .user.email

@@ -1,0 +1,38 @@
+id: juice-shop-register-login
+
+info:
+  name: Juice Shop register-login
+  author: ABCD
+  severity: info
+  description: |
+    Juice Shop login template to use in workflows for authenticated scans
+
+http:
+  - raw:
+    - |
+      POST /api/Users HTTP/1.1
+      Content-Type: application/json
+      Host: {{Hostname}}
+
+      {"email":"{{username}}","password":"{{password}}","passwordRepeat":"{{password}}"}
+
+    - |
+      POST /rest/user/login HTTP/1.1
+      Content-Type: application/json
+      Host: {{Hostname}}
+
+      {"email":"{{username}}","password":"{{password}}"}
+
+    matchers:
+      - type: status
+        status:
+          - 200
+          - 201
+    
+    extractors:
+      - type: json
+        part: body
+        name: auth_token
+        json:
+          - .authentication.token
+

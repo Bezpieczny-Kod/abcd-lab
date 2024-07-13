@@ -1,0 +1,43 @@
+env:
+  contexts:
+    - name: test-context
+      urls:
+        - "http://host.docker.internal:3000/"
+      includePaths:
+        - "http://host.docker.internal:3000/.*"
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: true
+
+jobs:
+  - type: script
+    parameters:
+      action: add
+      type: httpsender
+      engine: Graal.js
+      name: add_bearer_token
+      file: scripts/httpsender/add_bearer_token.js
+
+  - type: alertFilter
+    alertFilters:
+      - ruleId: 10020
+        newRisk: "Info"
+
+  - type: passiveScan-config
+    parameters:
+      maxAlertsPerRule: 10
+      scanOnlyInScope: true
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 0
+  
+  - type: spider
+      
+  - type: report
+    parameters:
+      template: traditional-html-plus
+      reportDir: /zap/wrk/reports
+      reportFile: ${REPORT_TITLE}
+      reportTitle: "ZAP Passive Scan Report"

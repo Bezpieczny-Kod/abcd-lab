@@ -1,0 +1,29 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<io.jenkins.plugins.logintheme.LoginTheme plugin="login-theme@146.v64a_da_cf70ea_6">
+  <head>&lt;style&gt;
+.app-sign-in-register__branding:before {
+    background-color: #00041c;
+    background-size: contain;
+    background-image: url(&apos;https://cdn.prod.website-files.com/6628c57960353f54e19a5970/66291622295827ff88332a6e_hero_main_img-p-1600.webp&apos;);
+}
+
+.app-sign-in-register__branding__starburst {
+all: unset;
+}
+
+.app-sign-in-register__branding:after {
+    background-color: #00041c;
+    background-size: contain;
+    background-image: url(&apos;https://cdn.prod.website-files.com/6628c57960353f54e19a5970/66291622295827ff88332a6e_hero_main_img-p-1600.webp&apos;);
+}
+
+.app-sign-in-register__branding img {
+visibility: hidden !important
+}
+&lt;/style&gt;</head>
+  <header></header>
+  <footer></footer>
+  <branding></branding>
+  <customCSS></customCSS>
+  <useDefaultTheme>true</useDefaultTheme>
+</io.jenkins.plugins.logintheme.LoginTheme>

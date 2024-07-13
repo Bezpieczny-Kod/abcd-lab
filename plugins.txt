@@ -1,0 +1,7 @@
+simple-theme-plugin:191.vcd207ef9dd24
+login-theme:146.v64a_da_cf70ea_6
+github:1.39.0
+workflow-aggregator:600.vb_57cdd26fdd7
+pipeline-stage-view:2.34
+ws-cleanup:0.46
+defectdojo:1.055.v80a_4d1944a_02

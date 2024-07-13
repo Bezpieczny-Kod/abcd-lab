@@ -1,0 +1,30 @@
+id: improper-error-handling-api-path
+
+info:
+  name: Improper Error Handling on Non-existent API Paths
+  author: ProjectDiscoveryAI
+  severity: medium
+  description: |
+    Vulnerability due to improper error handling when making HTTP calls to non-existent API paths.
+
+http:
+  - raw:
+      - |
+        GET /api/foo HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0
+        Content-Type: application/json
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 500
+      - type: word
+        words:
+          - "Error: Unexpected path: /api/foo"
+        part: body
+      - type: word
+        words:
+          - "Internal Server Error"
+        part: header

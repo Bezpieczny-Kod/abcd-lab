@@ -1,0 +1,16 @@
+Vulnerability due to improper error handling when making HTTP calls to non-existent API paths.
+
+HTTP request:
+
+GET /api/foo HTTP/1.1
+Host: {{Hostname}}
+User-Agent: Mozilla/5.0
+
+HTTP response:
+
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/html
+
+...
+<title>Error: Unexpected path: /api/foo</title>
+...
