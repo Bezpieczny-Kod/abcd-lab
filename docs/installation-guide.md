@@ -33,10 +33,7 @@ docker pull bkimminich/juice-shop
 
 ## Pierwsze uruchomienie
 
-Sklonuj na swój komputer to repozytorium:
-```text
-git clone git@github.com:Bezpieczny-Kod/abcd-lab-poc.git
-```
+Sklonuj na swój komputer to repozytorium.
 
 Utwórz nowe środowisko: 
 ```text
