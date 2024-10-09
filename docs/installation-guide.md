@@ -76,10 +76,7 @@ stop-lab:   Stopuje kontener Jenkins
 ```
 
 # Konfiguracja i zarządzanie bez Makefile
-Sklonuj na swój komputer to repozytorium:
-```text
-git clone git@github.com:Bezpieczny-Kod/abcd-lab-poc.git
-```
+Sklonuj na swój komputer to repozytorium.
 
 Zbuduj obraz:
 ```bash
