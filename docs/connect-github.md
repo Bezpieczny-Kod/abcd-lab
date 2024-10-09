@@ -2,7 +2,7 @@
 
 ## Fork repozytorium
 
-W ramach ABCD wszystkie narzędzia będą uruchamiane w ramach testowej aplikacji `Juice Shop`. Repozytorium z aplikacją `abcd-student` znajdziesz tutaj (zforkuj je do siebie).
+W ramach ABCD wszystkie narzędzia będą uruchamiane w ramach testowej aplikacji `Juice Shop`. Repozytorium z aplikacją `abcd-student` znajdziesz [tutaj](https://github.com/Bezpieczny-Kod/abcd-student) (zforkuj je do siebie).
 
 ## GitHub
 
