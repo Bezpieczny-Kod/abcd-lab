@@ -1,6 +1,6 @@
 # Uruchomienie pipeline i wysyłanie wyników (zadań)
 
-Będąc na stronie startowej [Dashboard](http://localhost:8080/) kliknij "New item", nazwij swój pipeline według uznania. Jako typ projektu wybierz "Pipeline" i kliknij "Ok".
+Będąc na stronie startowej [Dashboard](http://localhost:8080/) kliknij "New item", nazwij swój pipeline według uznania (**UWAGA! Nazwa pipeline nie może zawierać spacji, inaczej będzies zmiał potem problem z kopiowaniem artefaktów**). Jako typ projektu wybierz "Pipeline" i kliknij "Ok".
 ![jenkins new item](../assets/images/jenkins_new_item.png)
 
 Wybierz na samym dole **"Pipeline script from SCM"** jako repozytorium podaj adres (po HTTPS) do swojego zforkowanego repozytorium a jako "Credentials" wskaż wcześniej utworzone dane uwierzytelniające zawierają GitHub PAT. Jako ścieżka do Jenkinsfile zostaw po prostu `Jenkinsfile`. Zatwierdź i zapisz zmiany.
