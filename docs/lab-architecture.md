@@ -14,12 +14,5 @@ Istotne koncepty:
       - Aplikacja z racji tego, że jest skontenryzowana jest osiągalna przez `zap` poprzez specjalny adres `host.docker.internal:3000`.
 - Jenkins działa jako root aby zapewnić dostęp do gniazda UNIXowego podmonotwane z systemu hosta.
 
-## Tunelowanie Ngrok
-Ponieważ laboratorium działa lokalnie a nasze zdalne repozytorium jest hostowane jak sama nazwa mówi *zdalnie* potrzebujemy utworzyć tunel, który wystawi naszego lokalnego Jenkinsa na świat.
-- Tunelowanie działa do celów uruchomienia naszego potoku CI poprzez webhooka, który to z kolei jest wyzwalany przez *push* do zdalnego repozytorium.
-  - Jenkins jest zdolny do odbierania webhooka dzięki specjalnemu endpointowi `/github-webhook/`
-- Ngrok po rejestracji udostępnia wszystkim użytkownikom za darmo jedną stałą domenę dzięki czemu nie musisz za każdym razem uruchamiając laboratorium zmieniać adresu w repozytorium, na które mają być wysyłane webhooki.
-- Po każdym zastopowaniu laboratorium proces obsługujący tunel jest zamykany.
-
 ## Preinstalowane narzędzia
 Aby przyspieszyć pracę z laboratorium w trakcie budowania obrazu Docker instalowane są wszystkie narzędzia oraz pluginy do Jenkins, które będą używane w trakcie pracy.
