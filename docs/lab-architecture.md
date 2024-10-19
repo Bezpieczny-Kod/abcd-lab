@@ -1,6 +1,6 @@
 # Architektura laboratorium
 
-![lab architecture](../assets/images/lab.png)
+![lab architecture](../assets/images/lab_arch.png)
 
 ## Docker
 > [!WARNING]
