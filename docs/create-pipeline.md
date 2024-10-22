@@ -70,6 +70,9 @@ Wykorzystujemy plugin `defectDojoPublisher`, który automatycznie będzie korzys
 - `engagementName:` **UWAGA: ustaw wartość na swój adres e-mail (dzięki temu będziemy mogli Ciebie zidentyfikować)**
 
 ### Typy skanów
+> [!WARNING]
+> Typ skanu jest "case-sensitive".
+
 | Narzędzie              | Format | `scanType:`           |
 |------------------------|--------|-----------------------|
 | Zed Attack Proxy (ZAP) | XML    | 'ZAP Scan'            |
